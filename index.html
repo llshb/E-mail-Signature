@@ -19,12 +19,38 @@
             font-family: Arial, sans-serif;
         }
 
+        .email-body {
+            width: calc(100% - 20px); /* Margens laterais de 10px */
+            max-width: 800px;
+            margin-bottom: 30px;
+            padding: 10px; /* Espaço lateral antes da assinatura */
+            box-sizing: border-box;
+        }
+
+        .email-body p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
         .header {
-            height: 300px; /* Ajustado para acomodar melhor o logotipo */
+            position: relative;
+            height: 300px;
             width: 100%;
             background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/Sceilarte1.jpg');
             background-size: cover;
             background-position: center;
+        }
+
+        /* Logo Centralizada no Header */
+        .header-logo {
+            position: absolute;
+            top: 50%; /* Centralizado verticalmente */
+            left: 50%; /* Centralizado horizontalmente */
+            transform: translate(-50%, -50%); /* Ajuste para centralização */
+            width: 200px; /* Tamanho da logo */
+            height: auto;
+            z-index: 2; /* Para garantir que fique sobreposto à imagem */
         }
 
         .content {
@@ -32,6 +58,7 @@
             align-items: center;
             padding: 20px;
             width: 100%;
+            max-width: 800px;
             box-sizing: border-box;
             background: #fff;
             border-left: 4px solid #FFC107;
@@ -41,13 +68,26 @@
         .profile-section {
             text-align: center;
             margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-section .circle {
+            position: absolute;
+            top: -5px; /* Ajuste a posição vertical */
+            left: -5px; /* Ajuste a posição horizontal */
+            width: 160px; /* Ajuste do tamanho do círculo */
+            height: 160px;
+            background: #FFC107; /* Cor do círculo */
+            border-radius: 50%; /* Formato circular */
+            z-index: 1;
         }
 
         .profile-section img {
+            position: relative;
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            border: 5px solid #FFC107;
+            z-index: 2;
         }
 
         .info-section {
@@ -74,6 +114,7 @@
 
         .footer {
             width: 100%;
+            max-width: 800px;
             background: #333;
             color: #fff;
             text-align: center;
@@ -100,13 +141,25 @@
 </head>
 <body>
     <div class="container">
+
+        <!-- Corpo do e-mail antes da assinatura -->
+        <div class="email-body">
+            <p>Oi Carla,</p>
+            <p>E aí, já tem mais alguma resposta referente à minha empresa?</p>
+            <p>Fico no aguardo por mais novidades!</p>
+            <p><strong>Best Regards,</strong></p>
+        </div>
+
         <!-- Header Section -->
-        <div class="header"></div>
+        <div class="header">
+            <img class="header-logo" src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/logo-centralizada.png" alt="LL Art 360 Logo">
+        </div>
 
         <!-- Main Content Section -->
         <div class="content">
             <!-- Profile Image Section -->
             <div class="profile-section">
+                <div class="circle"></div> <!-- Círculo Amarelo Ajustado -->
                 <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
             </div>
             
