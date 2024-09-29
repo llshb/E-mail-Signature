@@ -34,11 +34,21 @@
             text-align: center;
             margin-right: 20px;
         }
-        .profile-section img {
+        .profile-section .profile-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
+            border: 6px solid #FFC107; /* Borda ao redor da imagem */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-section img {
             width: 150px;
             height: 150px;
-            border: 5px solid #FFC107;
+            border-radius: 50%;
+            display: block;
         }
         .info-section {
             flex: 1;
@@ -96,7 +106,9 @@
         <div class="content">
             <!-- Profile Image Section -->
             <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
+                <div class="profile-wrapper">
+                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
+                </div>
             </div>
             
             <!-- Contact Information Section -->
