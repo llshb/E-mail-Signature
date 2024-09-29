@@ -16,14 +16,12 @@
             margin: 0;
             display: flex;
             flex-direction: column;
+            align-items: center; /* Centraliza o conteúdo */
         }
 
         .inner-container {
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px; /* Ajustado para o tamanho desejado */
         }
 
         .header {
@@ -40,6 +38,8 @@
             border-left: 4px solid #FFC107;
             border-right: 4px solid #FFC107;
             background: #fff;
+            width: 100%; /* Largura total */
+            box-sizing: border-box; /* Inclui padding e border na largura */
         }
 
         .profile-section {
@@ -81,8 +81,8 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            width: 100%;
-            box-sizing: border-box;
+            width: 100%; /* Largura total */
+            box-sizing: border-box; /* Inclui padding e border na largura */
         }
 
         .footer-background {
@@ -112,11 +112,13 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header Section -->
         <div class="inner-container">
-            <!-- Header Section -->
             <div class="header"></div>
+        </div>
 
-            <!-- Main Content Section -->
+        <!-- Main Content Section -->
+        <div class="inner-container">
             <div class="content">
                 <!-- Profile Image Section -->
                 <div class="profile-section">
@@ -134,7 +136,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer Section with Full Width Background -->
         <div class="footer">
             <div class="social-icons">
