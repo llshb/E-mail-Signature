@@ -6,40 +6,44 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            height: 100%;
         }
 
         .container {
+            position: relative;
             width: 100%;
-            font-family: Arial, sans-serif;
-            color: #333;
-            overflow: hidden;
-            margin: 0;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza o conteúdo */
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
         }
 
-        .inner-container {
-            width: 100%;
-            max-width: 1000px; /* Ajustado para o tamanho desejado */
+        .header, .content, .footer {
+            position: absolute;
+            left: 0;
+            right: 0;
         }
 
         .header {
-            background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/imagem%20de%20topo%20da%20assinatura.png');
+            top: 0;
             height: 180px;
+            background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/imagem%20de%20topo%20da%20assinatura.png');
             background-size: cover;
             background-position: center;
         }
 
         .content {
+            top: 180px;
+            background: #fff;
             display: flex;
             align-items: center;
             padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
             border-left: 4px solid #FFC107;
             border-right: 4px solid #FFC107;
-            background: #fff;
-            width: 100%; /* Largura total */
-            box-sizing: border-box; /* Inclui padding e border na largura */
         }
 
         .profile-section {
@@ -77,20 +81,13 @@
         }
 
         .footer {
+            bottom: 0;
+            height: 100px;
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            width: 100%; /* Largura total */
-            box-sizing: border-box; /* Inclui padding e border na largura */
-        }
-
-        .footer-background {
             width: 100%;
-            height: 100px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
+            box-sizing: border-box;
         }
 
         .social-icons {
@@ -113,30 +110,26 @@
 <body>
     <div class="container">
         <!-- Header Section -->
-        <div class="inner-container">
-            <div class="header"></div>
-        </div>
+        <div class="header"></div>
 
         <!-- Main Content Section -->
-        <div class="inner-container">
-            <div class="content">
-                <!-- Profile Image Section -->
-                <div class="profile-section">
-                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
-                </div>
-                
-                <!-- Contact Information Section -->
-                <div class="info-section">
-                    <h2>Leonardo Luiz da Silva Horta Barbosa</h2>
-                    <h3>Creative Director, LL Art 360º</h3>
-                    <p><strong>Telefone:</strong> +352 661 353 097</p>
-                    <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
-                    <p><strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
-                    <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
-                </div>
+        <div class="content">
+            <!-- Profile Image Section -->
+            <div class="profile-section">
+                <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
+            </div>
+            
+            <!-- Contact Information Section -->
+            <div class="info-section">
+                <h2>Leonardo Luiz da Silva Horta Barbosa</h2>
+                <h3>Creative Director, LL Art 360º</h3>
+                <p><strong>Telefone:</strong> +352 661 353 097</p>
+                <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
+                <p><strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
+                <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
             </div>
         </div>
-
+        
         <!-- Footer Section with Full Width Background -->
         <div class="footer">
             <div class="social-icons">
