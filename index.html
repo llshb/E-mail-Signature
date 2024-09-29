@@ -2,9 +2,11 @@
 <html>
 <head>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
         }
         .container {
             width: 800px;
@@ -15,15 +17,17 @@
         }
         .header {
             background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/imagem%20de%20topo%20da%20assinatura.png');
-            height: 200px;
+            height: 180px;
             background-size: cover;
             background-position: center;
         }
         .content {
             display: flex;
             background: #fff;
-            padding: 20px;
             align-items: center;
+            padding: 20px;
+            border-left: 4px solid #FFC107;
+            border-right: 4px solid #FFC107;
         }
         .profile-section {
             text-align: center;
@@ -37,7 +41,7 @@
         }
         .info-section {
             flex: 1;
-            margin-left: 20px;
+            text-align: left;
         }
         .info-section h2 {
             color: #FFC107;
@@ -57,15 +61,13 @@
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 15px;
-        }
-        .social-icons {
-            margin-top: 10px;
+            padding: 20px 0;
         }
         .social-icons img {
-            width: 32px;
-            height: 32px;
-            margin: 0 10px;
+            width: 40px;
+            height: 40px;
+            margin: 0 15px;
+            display: inline-block;
         }
     </style>
 </head>
