@@ -10,14 +10,18 @@
         }
         .main-container {
             width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .container {
             width: 100%;
-            max-width: 1000px; /* Ajuste de largura máxima */
+            max-width: 1000px; /* Largura máxima */
             margin: 0 auto;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             font-family: Arial, sans-serif;
             background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
         }
         .spacer {
             height: 60px; /* Espaço de três linhas */
@@ -78,13 +82,11 @@
         .footer {
             background: #333;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
         .footer-content {
             width: 100%;
             max-width: 1000px; /* Ajuste de largura máxima para o rodapé */
+            margin: 0 auto;
             text-align: center;
             padding: 20px 0;
             color: #ffffff;
