@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assinatura com Logo 3D</title>
+    <title>Assinatura com Logo 3D com Sensor de Movimento</title>
     <style>
         body, html {
             margin: 0;
@@ -23,7 +23,7 @@
         }
 
         .email-body {
-            width: calc(100% - 20px); /* Margens laterais de 10px */
+            width: calc(100% - 20px);
             max-width: 800px;
             margin-bottom: 10px;
             padding: 10px;
@@ -39,15 +39,14 @@
             background-position: center;
         }
 
-        /* Container do logo 3D */
         #logo-3d-container {
             position: absolute;
-            top: 50%; /* Centralizar verticalmente */
-            left: 50%; /* Centralizar horizontalmente */
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            width: 250px; /* Tamanho do container */
-            height: 250px; /* Altura do container */
-            z-index: 2; /* Para garantir que o logo fique sobreposto */
+            width: 250px;
+            height: 250px;
+            z-index: 2;
         }
 
         .content {
@@ -65,17 +64,6 @@
             text-align: center;
             margin-right: 20px;
             position: relative;
-        }
-
-        .profile-section .circle {
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: 160px;
-            height: 160px;
-            background: #FFC107;
-            border-radius: 50%;
-            z-index: 1;
         }
 
         .profile-section img {
@@ -116,7 +104,7 @@
             color: #FFC107;
         }
     </style>
-    <!-- Bibliotecas Three.js e GLTFLoader -->
+    <!-- Adicionando as bibliotecas Three.js e GLTFLoader -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
@@ -135,13 +123,10 @@
 
         <!-- Main Content Section -->
         <div class="content">
-            <!-- Profile Image Section -->
             <div class="profile-section">
-                <div class="circle"></div> <!-- Círculo Amarelo Ajustado -->
                 <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
             </div>
             
-            <!-- Contact Information Section -->
             <div class="info-section">
                 <h2>Leonardo Luiz da Silva Horta Barbosa</h2>
                 <h3>Creative Director, LL Art 360º</h3>
@@ -151,7 +136,7 @@
                 <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
             </div>
         </div>
-        
+
         <!-- Footer Section -->
         <div class="footer">
             <div class="social-icons">
@@ -181,7 +166,7 @@
         renderer.setSize(container.offsetWidth, container.offsetHeight);
         container.appendChild(renderer.domElement);
 
-        // Carregando o modelo 3D (formato .glb)
+        // Carregando o modelo 3D (.glb)
         const loader = new THREE.GLTFLoader();
         loader.load('https://github.com/llshb/LL-Art-360---Logo-3D/blob/806ade2a1a3aa6da3763ee15b27fa42c02d891c9/Logo_LLArt360_3D(android).glb?raw=true', function (gltf) {
             const logo3D = gltf.scene;
@@ -189,12 +174,20 @@
             scene.add(logo3D);
             camera.position.z = 2;
 
+            // Função de animação
             function animate() {
                 requestAnimationFrame(animate);
-                logo3D.rotation.y += 0.01; // Animação de rotação contínua
                 renderer.render(scene, camera);
             }
             animate();
+
+            // Configuração de eventos para sensor de movimento
+            window.addEventListener('deviceorientation', function (event) {
+                const beta = event.beta ? THREE.Math.degToRad(event.beta) : 0; // Inclinação
+                const gamma = event.gamma ? THREE.Math.degToRad(event.gamma) : 0; // Movimento lateral
+                logo3D.rotation.x = beta;
+                logo3D.rotation.y = gamma;
+            }, true);
         }, undefined, function (error) {
             console.error('Erro ao carregar o modelo 3D:', error);
         });
