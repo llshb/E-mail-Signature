@@ -6,15 +6,14 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            height: 100%;
         }
         .container {
-            width: 800px;
+            max-width: 800px;
+            width: 100%;
             font-family: Arial, sans-serif;
             color: #333;
-            border-radius: 8px;
-            overflow: hidden;
             margin: 0 auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .header {
             background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/imagem%20de%20topo%20da%20assinatura.png');
@@ -38,14 +37,14 @@
             position: relative;
             width: 160px;
             height: 160px;
-            background: #FFC107; /* Fundo amarelo que remove o espaço em branco */
+            background: #FFC107;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .profile-section img {
-            width: 148px; /* Ajustar a imagem para encaixar na borda */
+            width: 148px;
             height: 148px;
             border-radius: 50%;
             display: block;
@@ -75,12 +74,11 @@
             padding: 20px 0;
             width: 100%;
         }
-        .footer-background {
+        .footer-content {
             width: 100%;
-            height: 100px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px 0;
         }
         .social-icons {
             margin-top: 10px;
@@ -124,21 +122,23 @@
         
         <!-- Footer Section with Full Width Background -->
         <div class="footer">
-            <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=100088591951919">
-                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconface%20-%20cópia.png" alt="Facebook">
-                </a>
-                <a href="https://www.youtube.com/@llart360">
-                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconyout%20-%20cópia.png" alt="YouTube">
-                </a>
-                <a href="https://www.instagram.com/llart360/">
-                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconinsta%20-%20cópia.png" alt="Instagram">
-                </a>
-                <a href="https://www.linkedin.com/in/llshb">
-                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconlinked%20-%20cópia.png" alt="LinkedIn">
-                </a>
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100088591951919">
+                        <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconface%20-%20cópia.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.youtube.com/@llart360">
+                        <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconyout%20-%20cópia.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.instagram.com/llart360/">
+                        <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconinsta%20-%20cópia.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/in/llshb">
+                        <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconlinked%20-%20cópia.png" alt="LinkedIn">
+                    </a>
+                </div>
+                <p style="margin-top: 15px;">LL Art 360º © 2024</p>
             </div>
-            <p style="margin-top: 15px;">LL Art 360º © 2024</p>
         </div>
     </div>
 </body>
