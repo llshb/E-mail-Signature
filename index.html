@@ -10,15 +10,20 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
             font-family: Arial, sans-serif;
             color: #333;
-            border-radius: 8px;
             overflow: hidden;
-            margin: 0 auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        .inner-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header {
@@ -107,24 +112,26 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <div class="header"></div>
+        <div class="inner-container">
+            <!-- Header Section -->
+            <div class="header"></div>
 
-        <!-- Main Content Section -->
-        <div class="content">
-            <!-- Profile Image Section -->
-            <div class="profile-section">
-                <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
-            </div>
-            
-            <!-- Contact Information Section -->
-            <div class="info-section">
-                <h2>Leonardo Luiz da Silva Horta Barbosa</h2>
-                <h3>Creative Director, LL Art 360º</h3>
-                <p><strong>Telefone:</strong> +352 661 353 097</p>
-                <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
-                <p><strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
-                <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
+            <!-- Main Content Section -->
+            <div class="content">
+                <!-- Profile Image Section -->
+                <div class="profile-section">
+                    <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/foto%20-%20cópia.png" alt="Leonardo Luiz">
+                </div>
+                
+                <!-- Contact Information Section -->
+                <div class="info-section">
+                    <h2>Leonardo Luiz da Silva Horta Barbosa</h2>
+                    <h3>Creative Director, LL Art 360º</h3>
+                    <p><strong>Telefone:</strong> +352 661 353 097</p>
+                    <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
+                    <p><strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
+                    <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
+                </div>
             </div>
         </div>
         
