@@ -5,10 +5,13 @@
         .container {
             font-family: Arial, sans-serif;
             color: #333;
+            width: 600px;
         }
         .background {
-            width: 600px;
+            width: 100%;
             height: auto;
+            display: block;
+            margin-bottom: 20px;
         }
         .content {
             margin: 20px;
@@ -28,13 +31,22 @@
             height: 32px;
             margin: 0 10px;
         }
+        .footer {
+            padding: 15px;
+            text-align: center;
+            background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/assinatura1.png');
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/assinatura1.png" alt="Background" class="background">
-        <div class="content">
-            <img src="'https://raw.githubusercontent.com/llshb/E-mail-Signature/main/Assinatura.png'" alt="Leonardo Luiz" class="profile-image">
+        <!-- Background Image -->
+        <div class="footer">
+            <!-- Profile Image -->
+            <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/assinatura1.png" alt="Background" class="background">
+            
+            <!-- Contact Details -->
             <div class="details">
                 <p style="font-size: 18px; color: #0000FF;"><strong>Leonardo Luiz da Silva Horta Barbosa</strong></p>
                 <p>Creative Director, LL Art 360º</p>
@@ -42,11 +54,13 @@
                 <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
                 <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
             </div>
+            
+            <!-- Social Media Links -->
             <div class="social-icons" style="margin-top: 20px;">
-                <a href="https://www.facebook.com/profile.php?id=100088591951919"><img src="cid:iconface.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/llart360/"><img src="cid:iconinsta.png" alt="Instagram"></a>
-                <a href="https://www.youtube.com/@llart360"><img src="cid:iconyout.png" alt="YouTube"></a>
-                <a href="https://www.linkedin.com/in/llshb"><img src="cid:iconlinked.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/profile.php?id=100088591951919"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconface.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/llart360/"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconinsta.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@llart360"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconyout.png" alt="YouTube"></a>
+                <a href="https://www.linkedin.com/in/llshb"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconlinked.png" alt="LinkedIn"></a>
             </div>
         </div>
     </div>
