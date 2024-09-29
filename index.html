@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assinatura com Logo 3D</title>
     <style>
         body, html {
             margin: 0;
@@ -23,14 +26,8 @@
             width: calc(100% - 20px); /* Margens laterais de 10px */
             max-width: 800px;
             margin-bottom: 10px;
-            padding: 10px; /* Espaço lateral antes da assinatura */
+            padding: 10px;
             box-sizing: border-box;
-        }
-
-        .email-body p {
-            font-size: 14px;
-            color: #333;
-            line-height: 1.6;
         }
 
         .header {
@@ -42,18 +39,18 @@
             background-position: center;
         }
 
-        /* Logo Centralizada no Header */
-        .header-logo {
+        /* Container do logo 3D */
+        #logo-3d-container {
             position: absolute;
-            top: 50%; /* Centralizado verticalmente */
-            left: 50%; /* Centralizado horizontalmente */
-            transform: translate(-50%, -50%); /* Ajuste para centralização */
-            width: 250px; /* Tamanho da logo */
-            height: auto;
-            z-index: 2; /* Para garantir que fique sobreposto à imagem */
+            top: 50%; /* Centralizar verticalmente */
+            left: 50%; /* Centralizar horizontalmente */
+            transform: translate(-50%, -50%);
+            width: 250px; /* Tamanho do container */
+            height: 250px; /* Altura do container */
+            z-index: 2; /* Para garantir que o logo fique sobreposto */
         }
 
-         .content {
+        .content {
             display: flex;
             align-items: center;
             padding: 20px;
@@ -72,12 +69,12 @@
 
         .profile-section .circle {
             position: absolute;
-            top: -5px; /* Ajuste a posição vertical */
-            left: -5px; /* Ajuste a posição horizontal */
-            width: 160px; /* Ajuste do tamanho do círculo */
+            top: -5px;
+            left: -5px;
+            width: 160px;
             height: 160px;
-            background: #FFC107; /* Cor do círculo */
-            border-radius: 50%; /* Formato circular */
+            background: #FFC107;
+            border-radius: 50%;
             z-index: 1;
         }
 
@@ -92,23 +89,6 @@
         .info-section {
             flex: 1;
             text-align: left;
-        }
-
-        .info-section h2 {
-            color: #FFC107;
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .info-section h3 {
-            color: #333;
-            font-size: 18px;
-            margin: 5px 0;
-        }
-
-        .info-section p {
-            margin: 4px 0;
-            font-size: 14px;
         }
 
         .footer {
@@ -136,19 +116,21 @@
             color: #FFC107;
         }
     </style>
+    <!-- Bibliotecas Three.js e GLTFLoader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
     <div class="container">
-
         <!-- Corpo do e-mail antes da assinatura -->
         <div class="email-body">
-           
             <p><strong>Best Regards,</strong></p>
         </div>
 
-        <!-- Header Section -->
+        <!-- Header Section com logo 3D -->
         <div class="header">
-            <img class="header-logo" src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/Logo%20Rev%203.png" alt="LL Art 360 Logo">
+            <!-- Container para exibir o modelo 3D -->
+            <div id="logo-3d-container"></div>
         </div>
 
         <!-- Main Content Section -->
@@ -170,7 +152,7 @@
             </div>
         </div>
         
-        <!-- Footer Section with Full Width Background -->
+        <!-- Footer Section -->
         <div class="footer">
             <div class="social-icons">
                 <a href="https://www.facebook.com/profile.php?id=100088591951919">
@@ -189,5 +171,33 @@
             <p style="margin-top: 15px;">LL Art 360º © 2024</p>
         </div>
     </div>
+
+    <!-- Script para carregar e renderizar o modelo GLB -->
+    <script>
+        const container = document.getElementById('logo-3d-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+        container.appendChild(renderer.domElement);
+
+        // Carregando o modelo 3D (formato .glb)
+        const loader = new THREE.GLTFLoader();
+        loader.load('https://github.com/llshb/LL-Art-360---Logo-3D/blob/806ade2a1a3aa6da3763ee15b27fa42c02d891c9/Logo_LLArt360_3D(android).glb?raw=true', function (gltf) {
+            const logo3D = gltf.scene;
+            logo3D.scale.set(1, 1, 1);
+            scene.add(logo3D);
+            camera.position.z = 2;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                logo3D.rotation.y += 0.01; // Animação de rotação contínua
+                renderer.render(scene, camera);
+            }
+            animate();
+        }, undefined, function (error) {
+            console.error('Erro ao carregar o modelo 3D:', error);
+        });
+    </script>
 </body>
 </html>
