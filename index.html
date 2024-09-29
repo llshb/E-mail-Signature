@@ -10,19 +10,17 @@
         }
         .main-container {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            background-color: #ffffff; /* Fundo para garantir preenchimento completo */
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4; /* Fundo de segurança */
         }
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            font-family: Arial, sans-serif;
-            background: #ffffff;
             border-radius: 8px;
             overflow: hidden;
+            box-sizing: border-box;
         }
         .spacer {
             height: 60px; /* Espaço de três linhas */
@@ -42,6 +40,7 @@
             border-left: 4px solid #FFC107;
             border-right: 4px solid #FFC107;
             box-sizing: border-box;
+            width: 100%; /* Adiciona largura completa */
         }
         .profile-section {
             text-align: center;
@@ -66,6 +65,7 @@
         .info-section {
             flex: 1;
             text-align: left;
+            width: calc(100% - 180px);
         }
         .info-section h2 {
             color: #FFC107;
@@ -84,14 +84,17 @@
         .footer {
             background: #333;
             width: 100%;
+            margin: 0;
+            padding: 0;
         }
         .footer-content {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
             padding: 20px 0;
             color: #ffffff;
+            box-sizing: border-box;
         }
         .social-icons {
             margin-top: 10px;
