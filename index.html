@@ -6,62 +6,97 @@
             font-family: Arial, sans-serif;
             color: #333;
             width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
-        .background {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
+        .header {
+            background-image: url('cid:header-image');
+            height: 180px;
+            background-size: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
         .content {
-            margin: 20px;
-            text-align: left;
+            display: flex;
+            padding: 20px;
+            align-items: center;
         }
-        .profile-image {
-            float: left;
-            margin-right: 15px;
+        .profile-section {
+            text-align: center;
+            margin-right: 20px;
+        }
+        .profile-section img {
             border-radius: 50%;
-            width: 100px;
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
         }
-        .details {
-            margin-left: 130px;
+        .info-section {
+            flex: 1;
+        }
+        .info-section h2 {
+            color: #FFC107;
+            margin: 0;
+        }
+        .info-section h3 {
+            color: #000;
+            margin: 5px 0;
+        }
+        .info-section p {
+            margin: 2px 0;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
         }
         .social-icons img {
             width: 32px;
             height: 32px;
             margin: 0 10px;
         }
-        .footer {
-            padding: 15px;
-            text-align: center;
-            background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/assinatura1.png');
-            background-size: cover;
+        .social-icons {
+            padding-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Background Image -->
-        <div class="footer">
-            <!-- Profile Image -->
-            <img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/assinatura1.png" alt="Background" class="background">
+        <!-- Header Section -->
+        <div class="header">
+            <!-- Background image defined in CSS -->
+        </div>
+        
+        <!-- Main Content Section -->
+        <div class="content">
+            <!-- Profile Image Section -->
+            <div class="profile-section">
+                <img src="cid:profile-image" alt="Profile Image">
+            </div>
             
-            <!-- Contact Details -->
-            <div class="details">
-                <p style="font-size: 18px; color: #0000FF;"><strong>Leonardo Luiz da Silva Horta Barbosa</strong></p>
-                <p>Creative Director, LL Art 360º</p>
-                <p><strong>Telefone:</strong> +352 661 353 097 | <strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
+            <!-- Contact Information Section -->
+            <div class="info-section">
+                <h2>Leonardo Luiz</h2>
+                <h3>Creative Director</h3>
+                <p><strong>Telefone:</strong> +352 661 353 097</p>
                 <p><strong>E-mail:</strong> <a href="mailto:leonardo.horta@llart360.com">leonardo.horta@llart360.com</a></p>
+                <p><strong>Site:</strong> <a href="https://www.llart360.com">www.llart360.com</a></p>
                 <p><strong>Endereço:</strong> 136 Rue Victor Hugo, Esch-sur-Alzette, Luxembourg 4141</p>
             </div>
-            
-            <!-- Social Media Links -->
-            <div class="social-icons" style="margin-top: 20px;">
-                <a href="https://www.facebook.com/profile.php?id=100088591951919"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconface.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/llart360/"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconinsta.png" alt="Instagram"></a>
-                <a href="https://www.youtube.com/@llart360"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconyout.png" alt="YouTube"></a>
-                <a href="https://www.linkedin.com/in/llshb"><img src="https://raw.githubusercontent.com/llshb/E-mail-Signature/main/iconlinked.png" alt="LinkedIn"></a>
+        </div>
+        
+        <!-- Footer Section with Social Media Links -->
+        <div class="footer">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100088591951919"><img src="cid:iconface.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/llart360/"><img src="cid:iconinsta.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@llart360"><img src="cid:iconyout.png" alt="YouTube"></a>
+                <a href="https://www.linkedin.com/in/llshb"><img src="cid:iconlinked.png" alt="LinkedIn"></a>
             </div>
+            <p>LL Art 360º © 2024</p>
         </div>
     </div>
 </body>
