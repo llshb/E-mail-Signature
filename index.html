@@ -16,32 +16,32 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             font-family: Arial, sans-serif;
         }
 
         .header {
-            top: 0;
-            height: 200px;
+            height: 180px;
+            width: 100%;
             background-image: url('https://raw.githubusercontent.com/llshb/E-mail-Signature/main/imagem%20de%20topo%20da%20assinatura.png');
-            background-size: absolute;
+            background-size: cover;
+            background-position: center;
         }
 
         .content {
-            top: 180px;
-            background: #fff;
             display: flex;
             align-items: center;
             padding: 20px;
             width: 100%;
             box-sizing: border-box;
-           background-size: absolute;
+            background: #fff;
+            border-left: 4px solid #FFC107;
+            border-right: 4px solid #FFC107;
+            border-bottom: 0; /* Remover a borda inferior para ajuste */
         }
 
         .profile-section {
             text-align: center;
             margin-right: 20px;
-            background-size: absolute;
         }
 
         .profile-section img {
@@ -74,13 +74,13 @@
         }
 
         .footer {
-            bottom: 0;
-            height: 100px;
+            width: 100%;
             background: #333;
             color: #fff;
             text-align: center;
-            width: 100%;
+            padding: 20px 0;
             box-sizing: border-box;
+            margin: 0; /* Remover margem extra */
         }
 
         .social-icons {
